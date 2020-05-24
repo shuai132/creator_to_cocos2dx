@@ -96,7 +96,8 @@ void CCSlot::_updateBlendMode()
                 const auto texture = spriteDisplay->getTexture();
                 if (texture && texture->hasPremultipliedAlpha())
                 {
-                    cocos2d::BlendFunc blendFunc = { GL_ONE, GL_ONE };
+                    using namespace cocos2d::backend;
+                    cocos2d::BlendFunc blendFunc = {BlendFactor::ONE, BlendFactor::ONE};
                     spriteDisplay->setBlendFunc(blendFunc);
                 }
                 else
