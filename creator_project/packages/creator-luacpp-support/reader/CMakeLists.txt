@@ -65,7 +65,7 @@ if(BUILD_LUA_LIBS)
     )
 endif()
 
-
+link_libraries(cocos2d)
 add_library(${LIB_NAME} ${READER_SOURCE} ${READER_HEADER})
 
 set_target_properties(${LIB_NAME}
@@ -81,3 +81,5 @@ target_link_libraries(${LIB_NAME} dragonbones)
 if(XCODE OR VS)
     cocos_mark_code_files(${LIB_NAME})
 endif()
+
+target_include_directories(${LIB_NAME} PUBLIC . ..)
